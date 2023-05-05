@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h1>홈 페이지</h1>
-        <p>홈 페이지입니다</p>
+        <h1>상품 페이지</h1>
     </div>
 </template>
 
