@@ -11,5 +11,9 @@
   "devDependencies": {
     "@types/node": "^18",
     "nuxt": "^3.4.3"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.10",
+    "pinia": "^2.0.36"
   }
 }
