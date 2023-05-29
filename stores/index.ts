@@ -14,7 +14,7 @@ const cartStore = () => {
             if (response.data.value) {
                 cartItems.value = response.data.value?.map((item) => ({
                     ...item,
-                    imageUrl: `${item.imageUrl}?random=${Math.random()}`,
+                    imageUrl: `${item.imageUrl}`,
                 }))
             }
         } catch(e) {

@@ -1,14 +1,24 @@
+
 import { IProduct } from "~/types/types";
 
-const fetchInstance = $fetch.create({
-    baseURL: 'http://localhost:3000/'
-})
+function getFetchInstance() {
+    return $fetch.create({
+        baseURL: useRuntimeConfig().public.baseURL
+        // baseURL: 'http://localhost:3000'
+    })
+}
+// const fetchInstance = $fetch.create({
+//     baseURL: useRuntimeConfig().public.baseURL
+//     // baseURL: 'http://localhost:3000'
+// })
 
 function useAsyncDataGET<T>(route: string, options?: object) {
+    const fetchInstance = getFetchInstance()
     return useAsyncData<T>(async () => await fetchInstance(route, options))
 }
 
 function useAsyncDataPOST<T>(route: string, options: any) {
+    const fetchInstance = getFetchInstance()
     return useAsyncData<T>(async () => await fetchInstance(route, {
         method: 'post',
         ...options

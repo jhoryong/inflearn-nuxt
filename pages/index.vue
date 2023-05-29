@@ -30,7 +30,7 @@ const response = await fetchProduct()
 productArr.value = response.data.value?.map(product => {
   return {
     ...product,
-    imageUrl: `${product.imageUrl}?random=${Math.random()}`
+    imageUrl: `${product.imageUrl}`
   }
 })
 
@@ -43,7 +43,7 @@ async function filterItemsBySearchText() {
   const { data } = await fetchProductsByKeyword(inputText.value)
   productArr.value = data.value?.map((item) => ({
     ...item,
-    imageUrl: `${item.imageUrl}?random=${Math.random()}`,
+    imageUrl: `${item.imageUrl}`,
   }))
 }
 
