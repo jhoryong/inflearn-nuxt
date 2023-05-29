@@ -9,19 +9,27 @@ const cartStore = () => {
     }
 
     async function _fetchCartItems() {
-        const response = await fetchCartItems();
-        if (response.data.value) {
-            cartItems.value = response.data.value?.map((item) => ({
-                ...item,
-                imageUrl: `${item.imageUrl}?random=${Math.random()}`,
-            }))
+        try {
+            const response = await fetchCartItems();
+            if (response.data.value) {
+                cartItems.value = response.data.value?.map((item) => ({
+                    ...item,
+                    imageUrl: `${item.imageUrl}?random=${Math.random()}`,
+                }))
+            }
+        } catch(e) {
+            console.log(e);
         }
+    }
+
+    async function init() {
+        await _fetchCartItems();
     }
 
     return {
         cartItems,
+        init,
         addCartItem,
-        _fetchCartItems
     }
 }
 

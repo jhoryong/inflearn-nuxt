@@ -21,9 +21,9 @@
 <script setup lang="ts">
 const cartStore = useCartStore()
 const carts = computed(() => cartStore.cartItems)
-useAsyncData(async () => {
-    cartStore._fetchCartItems()
-})
+// useAsyncData(async () => {
+//     cartStore._fetchCartItems()
+// })
 
 </script>
 
@@ -31,7 +31,7 @@ useAsyncData(async () => {
 .container {
     margin: 2rem 10rem;
 }
-
+    
 .list-title {
     font-weight: 700;
     font-size: 1.4rem;
