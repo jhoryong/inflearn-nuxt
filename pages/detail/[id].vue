@@ -37,6 +37,11 @@ async function addToCart() {
     carStore.addCartItem(product)   
     router.push('/cart')
 }
+
+useServerSeoMeta({
+  title: () => `${product.name} 상세 페이지`,
+  description: () => `${product.name} 상세 페이지입니다.`
+})
 </script>
 
 <style scoped>
