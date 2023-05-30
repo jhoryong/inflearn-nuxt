@@ -38,9 +38,11 @@ async function addToCart() {
     router.push('/cart')
 }
 
-useServerSeoMeta({
-  title: () => `${product.name} 상세 페이지`,
-  description: () => `${product.name} 상세 페이지입니다.`
+useHead({
+  title: `${product.name} 상세 페이지`,
+  meta: [
+    { name: 'description', content: `${product.name} 상세페이지 입니다.` }
+  ],
 })
 </script>
 
